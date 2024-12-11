@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños, Kyara Tays!</title>
+    <link rel="icon" href="img/mini/favicon.jpg" type="image/jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Reproductor de audio -->
+  <audio id="background-music" loop>
+    <source src="audio/1.mp3" type="audio/mp3">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
+  <script>
+    // Verificar si el navegador permite autoplay con AudioContext
+    let audio = document.getElementById('background-music');
+    let context = new (window.AudioContext || window.webkitAudioContext)();
+
+    // Activar el contexto de audio y desmutear
+    window.onload = function() {
+      // Reproducir el audio una vez que se cargue el contexto
+      context.resume().then(() => {
+        audio.play().then(() => {
+          audio.muted = false;  // Desactivar el mute
+          console.log("Audio comenzando a reproducirse...");
+        }).catch((error) => {
+          console.log("Error al reproducir el audio:", error);
+        });
+      });
+    };
+
+    // Verifica si hay errores de carga
+    audio.onerror = function() {
+      console.log('Error al cargar el audio');
+    };
+  </script>
+
+    <!-- Header -->
+    <header class="text-center py-5 bg-light">
+        <h1>🎉 ¡Feliz Cumpleaños, Kyara Tays! 🎂</h1>
+        <p>Te quiero muchisimo 🌟</p>
+    </header>
+
+<!-- Main content in a container -->
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+    <!-- Primer mensaje: imagen a la izquierda, texto a la derecha -->
+    <div class="carousel-item active">
+        <div class="carousel-banner">
+        <div class="carousel-content left">
+            <img src="img/mini/favicon.jpg" class="carousel-image" alt="Mensaje 1">
+        </div>
+        <div class="carousel-content right">
+            <h3>¡Felicidades, Kyara!</h3>
+            <p>Eres increíble, nunca lo olvides. 🌟</p>
+            <p>"Hoy celebramos más que tu cumpleaños, celebramos la magia que eres, la luz que irradias en cada paso. Que este día sea tan maravilloso como el amor que das."</p>
+            <p>"Eres como una estrella brillante, que nunca se apaga, siempre adelante. En cada rincón, en cada sonrisa, tu alma refleja la vida que embelleces."</p>
+        </div>
+        </div>
+    </div>
+
+    <!-- Segundo mensaje: texto a la izquierda, imagen a la derecha -->
+    <div class="carousel-item">
+        <div class="carousel-banner">
+        <div class="carousel-content left">
+            <h3>Disfruta tu día</h3>
+            <p>Este día es tan especial como tú. 💖</p>
+            <p>"Tu risa es la melodía del viento, y tu alma, el eco del universo. Hoy el mundo se detiene a verte, porque es tu momento, y el amor te pertenece."</p>
+        </div>
+        <div class="carousel-content right">
+            <img src="img/DiaDeJuegos/5.jpg" class="carousel-image" alt="Mensaje 2">
+        </div>
+        </div>
+    </div>
+
+    <!-- Tercer mensaje: imagen a la izquierda, texto a la derecha -->
+    <div class="carousel-item">
+        <div class="carousel-banner">
+        <div class="carousel-content left">
+            <img src="img/mini/2.jpg" class="carousel-image" alt="Mensaje 3">
+        </div>
+        <div class="carousel-content right">
+            <h3>Con cariño</h3>
+            <p>De todos los que te quieren. 🎁</p>
+            <p>"Que este día sea solo el comienzo de un año lleno de bendiciones, alegrías y momentos felices. ¡Te queremos mucho, Kyara, y siempre serás una inspiración para todos nosotros!"</p>
+            <p>"Hoy celebro no solo tu ser, sino todo lo que has logrado crecer. Tus sueños se hacen realidad, porque eres amor, luz y verdad."</p>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Controles del carrusel -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+    </button>
+</div>
+
+
+        <!-- Mosaico de Imágenes -->
+        <section class="mosaic-section">
+            <h2>Mosaico de Fotos</h2>
+            <br />
+            <div id="photo-mosaic" class="mosaic">
+                <!-- Las imágenes iniciales se generarán aquí mediante JavaScript -->
+            </div>
+            <br />
+            <button id="update-photos" class="btn btn-primary">Actualizar Fotos</button>
+        </section>
+
+<!-- Tarjetas deslizables con Poemas -->
+<section id="poems" class="mt-5">
+    <h2 class="text-center text-dark mb-4">📜 Poemas para Kyara</h2>
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- Tarjeta 1: El poder de ser tú -->
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-lg rounded-3">
+                    <div class="card-header text-white bg-gradient-primary d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-lightning"></i> El poder de ser tú</span>
+                    </div>
+                    <div class="card-body">
+                        <p>No mires atrás, sigue adelante,<br>
+                        con la frente en alto, como caminante.<br>
+                        No pienses de más si no es importante,<br>
+                        pues cuanto más piensas, más te hace turbante.</p>
+                        <p>Sé sincera, sin miedo, sin disfrazar,<br>
+                        no ocultes tus ojos, no temas amar.<br>
+                        Sé fiel y huye de la traición,<br>
+                        pues, así como rompes, rompen tu corazón.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tarjeta 2: Bonita -->
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-lg rounded-3">
+                    <div class="card-header text-white bg-gradient-success d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-heart"></i> Bonita</span>
+                    </div>
+                    <div class="card-body">
+                        <p>No olvides nunca lo que aquí te he dicho,<br>
+                        aunque el tiempo nos separe, siempre estaré en tu camino.<br>
+                        Guardo en mi pecho un latido sincero,<br>
+                        que por ti siempre arde, siempre es primero.</p>
+                        <p>Morena, dibújame con cada suspiro,<br>
+                        en tu esencia encuentro el amor que respiro.<br>
+                        Eres un lienzo que deseo acariciar,<br>
+                        y en cada trazo, mi amor va a brillar.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tarjeta 3: Cuerpos Celestes -->
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-lg rounded-3">
+                    <div class="card-header text-white bg-gradient-warning d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-star"></i> Cuerpos Celestes</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Astro, sonríe, alegra mi vivir,<br>
+                        bésame, une tu labio al mío.<br>
+                        No hay tristeza que me dure, amor,<br>
+                        sí veo tu sonrisa al despertar.</p>
+                        <p>Dame una sonrisa que erice mi piel,<br>
+                        te doy mi amor porque no me mientes.<br>
+                        Enredado estoy en tus rizos de amor,<br>
+                        tus labios de mariposa, tu luz de miel.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tarjeta 4: Púrpura y Constelación Nebulosa -->
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-lg rounded-3">
+                    <div class="card-header text-white bg-gradient-info d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-asterisk"></i> Púrpura y Constelación Nebulosa</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Púrpura, tu alma es un lienzo de estrellas,<br>
+                        pintando un cielo donde brilla tu verdad.<br>
+                        Cada trazo, un susurro de luz sincera,<br>
+                        aunque dudes, recuerda: eres inmensidad.</p>
+                        <p>Así, pintemos juntos un cielo radiante,<br>
+                        donde el amor sea el color de la vida,<br>
+                        las risas compartidas, el eco eterno,<br>
+                        de un amor que florece, libre y sincero.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <!-- Tarjeta 5: Risueña -->
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-lg rounded-3">
+                    <div class="card-header text-white bg-gradient-danger d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-smile"></i> Risueña</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Ojos que vencen, sonrisa que calma,<br>
+                        te abrazo y olvido lo cruel del mundo.<br>
+                        Ojitos que brillan como estrellas lejanas,<br>
+                        un amor que florece, profundo y fecundo.</p>
+                        <p>La chica que soñó un mundo mejor,<br>
+                        teje sueños de colores en su corazón.<br>
+                        En cada estrella, un deseo guardado,<br>
+                        en cada rayo de sol, la esperanza.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tarjeta 6: Sueños de una Artista -->
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-lg rounded-3">
+                    <div class="card-header text-white bg-gradient-purple d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-palette"></i> Sueños de una Artista</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Tu alma es un lienzo de colores vibrantes,<br>
+                        aunque a veces te ocultes entre sombras distantes.<br>
+                        Rompes tus trazos por miedo a volar,<br>
+                        pero en cada pincelada hay un mundo por explorar.</p>
+                        <p>Píntame un cielo con tu risa sincera,<br>
+                        deja que tu arte en el viento se eleva.<br>
+                        En tus manos vive la magia y el fuego,<br>
+                        una artista brillante que se niega a su juego.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tarjeta 7: Refugio de Estrellas -->
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-lg rounded-3">
+                    <div class="card-header text-white bg-gradient-secondary d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-moon"></i> Refugio de Estrellas</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Enredado en tus rizos, me pierdo en el amor,<br>
+                        cuando me abrazas, se disipa el dolor.<br>
+                        Tus ojos de miel son estrellas lejanas,<br>
+                        en ellos, mi mundo se llena de ganas.</p>
+                        <p>Eres la calma, la música en mi vida,<br>
+                        el refugio eterno, mi luz encendida.<br>
+                        Las estrellas en tu alma son la verdad,<br>
+                        y yo estaré aquí, recordándote siempre.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tarjeta 8: Universo Eterno -->
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-lg rounded-3">
+                    <div class="card-header text-white bg-gradient-dark d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-galaxy"></i> Universo Eterno</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Así, pintemos juntos un cielo radiante,<br>
+                        donde el amor sea el color de la vida.<br>
+                        Las risas compartidas, el eco eterno,<br>
+                        de un amor que florece, libre y sincero.</p>
+                        <p>La belleza del arte vive en ti,<br>
+                        en cada suspiro, en cada mirada.<br>
+                        Eres la artista que ilumina mi mundo,<br>
+                        y en cada susurro, yo siempre estaré.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br />
+<div class="container nuevo"></div>
+        <!-- Slider de Imágenes -->
+        <section class="smash-title-section">
+            <div class="smash-title-container">
+                <h2 class="title">Día de Juegos <span class="controller-icon">🎮</span></h2>
+                <p class="subtitle">¡Elige tu luchador y empieza la batalla!</p>
+            </div>
+        </section>
+        
+        <div class="slider-container">
+            <button class="prev-btn">&#10094;</button>
+            <div class="slider" id="slider">
+                <img src="img/DiaDeJuegos/1.jpg" alt="Imagen 1" class="slider-image">
+                <img src="img/DiaDeJuegos/2.jpg" alt="Imagen 2" class="slider-image">
+                <img src="img/DiaDeJuegos/3.jpg" alt="Imagen 3" class="slider-image">
+                <img src="img/DiaDeJuegos/4.jpg" alt="Imagen 4" class="slider-image">
+                <img src="img/DiaDeJuegos/5.jpg" alt="Imagen 5" class="slider-image">
+                <img src="img/DiaDeJuegos/6.jpg" alt="Imagen 6" class="slider-image">
+                <img src="img/DiaDeJuegos/7.jpg" alt="Imagen 7" class="slider-image">
+                <img src="img/DiaDeJuegos/8.jpg" alt="Imagen 8" class="slider-image">
+                <img src="img/DiaDeJuegos/9.jpg" alt="Imagen 9" class="slider-image">
+                <img src="img/DiaDeJuegos/10.jpg" alt="Imagen 10" class="slider-image">
+                <img src="img/DiaDeJuegos/11.jpg" alt="Imagen 11" class="slider-image">
+                <img src="img/DiaDeJuegos/12.jpg" alt="Imagen 12" class="slider-image">
+                <img src="img/DiaDeJuegos/13.jpg" alt="Imagen 13" class="slider-image">
+                <img src="img/DiaDeJuegos/14.jpg" alt="Imagen 14" class="slider-image">
+                <img src="img/DiaDeJuegos/15.jpg" alt="Imagen 15" class="slider-image">
+                <img src="img/DiaDeJuegos/16.jpg" alt="Imagen 16" class="slider-image">
+                <img src="img/DiaDeJuegos/17.jpg" alt="Imagen 17" class="slider-image">
+                <img src="img/DiaDeJuegos/18.jpg" alt="Imagen 18" class="slider-image">
+                <img src="img/DiaDeJuegos/19.jpg" alt="Imagen 19" class="slider-image">
+                <img src="img/DiaDeJuegos/20.jpg" alt="Imagen 20" class="slider-image">
+                <img src="img/DiaDeJuegos/21.jpg" alt="Imagen 21" class="slider-image">
+                <img src="img/DiaDeJuegos/22.jpg" alt="Imagen 22" class="slider-image">
+                <img src="img/DiaDeJuegos/23.jpg" alt="Imagen 23" class="slider-image">
+                <img src="img/DiaDeJuegos/24.jpg" alt="Imagen 24" class="slider-image">
+                <img src="img/DiaDeJuegos/25.jpg" alt="Imagen 25" class="slider-image">
+                <img src="img/DiaDeJuegos/26.jpg" alt="Imagen 26" class="slider-image">
+                <img src="img/DiaDeJuegos/27.jpg" alt="Imagen 27" class="slider-image">
+                <img src="img/DiaDeJuegos/28.jpg" alt="Imagen 28" class="slider-image">
+                <img src="img/DiaDeJuegos/29.jpg" alt="Imagen 29" class="slider-image">
+            </div>
+            <button class="next-btn">&#10095;</button>
+        </div>
+    </div>
+    </main>
+
+    <div class="video-player-container">
+        <input type="number" id="video-number" min="1" max="22" placeholder="Ingresa un número del 1 al 22" />
+        <button onclick="changeVideo()">Ver Video</button>
+        <div class="video-container">
+            <video id="video-player" controls>
+                <source src="" id="video-source" type="video/mp4">
+                Tu navegador no soporta el formato de video.
+            </video>
+        </div>
+    </div>
+    
+
+    <!-- Footer -->
+    <footer class="text-center py-3 bg-dark text-light mt-5">
+        <p>Con mucho cariño ❤️</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+<!-- Bootstrap JS y Popper.js (dependencia para carrusel) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
